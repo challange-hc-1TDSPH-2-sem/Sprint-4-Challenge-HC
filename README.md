@@ -171,9 +171,11 @@ challenge-hc-front-end/
    
    Crie um arquivo `.env` na raiz do projeto:
    ```env
-   VITE_API_BASE_URL=http://localhost:8080/api
-   VITE_API_TIMEOUT=10000
+   VITE_API_BASE_URL=https://sprint4java564969.onrender.com
+   VITE_API_TIMEOUT=15000
    ```
+   
+   **Nota**: A API já está configurada por padrão. Você só precisa criar o `.env` se quiser usar uma URL diferente.
 
 4. **Execute o projeto em desenvolvimento**
    ```bash
@@ -230,6 +232,16 @@ O projeto está preparado para integração com API RESTful desenvolvida em Java
 
 ### Endpoints Implementados
 
+#### Teleconsulta (API Java - Render)
+- `GET /teleconsulta` - Lista todas as teleconsultas
+- `GET /teleconsulta/:id` - Busca teleconsulta por ID (codigo)
+- `POST /teleconsulta` - Marca nova teleconsulta
+- `PUT /teleconsulta/:id` - Atualiza teleconsulta
+- `DELETE /teleconsulta/:id` - Desmarca teleconsulta
+
+**URL da API**: [https://sprint4java564969.onrender.com](https://sprint4java564969.onrender.com)
+
+#### Emergências (Exemplo)
 - `GET /api/emergencias` - Lista todas as emergências
 - `GET /api/emergencias/:id` - Busca emergência por ID
 - `POST /api/emergencias` - Cria nova emergência
