@@ -34,6 +34,7 @@ function App() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
+            {/* eslint-disable-next-line react/no-unknown-property */}
             <nav className="hidden sm:flex gap-1 text-sm">
               <NavLink to="/" end className={({ isActive }) => `px-4 py-2 rounded-xl font-medium transition-all duration-300 ${isActive ? 'bg-red-100 text-red-700 shadow-soft' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}>Home</NavLink>
               <NavLink to="/emergencias" className={({ isActive }) => `px-4 py-2 rounded-xl font-medium transition-all duration-300 ${isActive ? 'bg-red-100 text-red-700 shadow-soft' : 'text-gray-700 hover:bg-red-50 hover:text-red-600'}`}>🚨 Emergências</NavLink>
