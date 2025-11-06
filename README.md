@@ -49,7 +49,7 @@ O **HC BRIDGE** é uma solução integrada ao Portal do Paciente HC que facilita
 ### Core
 - **React 19.1.1** - Biblioteca JavaScript para construção de interfaces
 - **TypeScript 5.8.3** - Superset JavaScript com tipagem estática
-- **Vite 7.1.2** - Build tool e dev server de alta performance
+- **Vite 6.4.1** - Build tool e dev server de alta performance
 
 ### Roteamento
 - **React Router DOM 7.9.1** - Roteamento para aplicações React SPA
@@ -184,7 +184,7 @@ challenge-hc-front-end/
 
 5. **Acesse no navegador**
    ```
-   http://localhost:5173
+   https://sprint-4-challenge-hc.vercel.app/
    ```
 
 ### Scripts Disponíveis
@@ -257,23 +257,9 @@ O cliente API trata automaticamente:
 - ✅ Erros de parsing JSON
 
 ---
-
-## 🌐 Deploy
-
-### Deploy na Vercel
-
-1. **Conecte seu repositório GitHub à Vercel**
-
-2. **Configure as variáveis de ambiente** na Vercel:
-   - `VITE_API_BASE_URL` - URL da sua API remota
-   - `VITE_API_TIMEOUT` - Timeout (opcional)
-
-3. **Deploy automático**
-   - A Vercel fará deploy automaticamente a cada push na branch `main`
-
 ### URL de Produção
 
-🔗 **URL do Projeto**: [Adicione aqui a URL após o deploy na Vercel]
+🔗 **URL do Projeto**: [https://sprint-4-challenge-hc.vercel.app]
 
 ---
 
@@ -311,7 +297,9 @@ O cliente API trata automaticamente:
 🎥 **YouTube**: [https://www.youtube.com/watch?v=W6WYKu_Qmog](https://www.youtube.com/watch?v=W6WYKu_Qmog)
 
 ### Deploy
-🌐 **Vercel**: [Adicione aqui a URL após o deploy]
+🌐 **Vercel**: [https://sprint-4-challenge-hc.vercel.app]
+
+**URL da API**: [https://sprint4java564969.onrender.com](https://sprint4java564969.onrender.com)
 
 ---
 
@@ -319,10 +307,6 @@ O cliente API trata automaticamente:
 
 ### Favicon
 ![Favicon](public/favicon.svg)
-
-### Screenshots
-
-*Adicione aqui screenshots das principais páginas do projeto*
 
 ---
 
@@ -371,20 +355,6 @@ interface ApiResponse<T> {
   status?: number
 }
 ```
-
----
-
-## 🧪 Testes
-
-Para testar a integração com a API:
-
-1. Certifique-se de que sua API Java está rodando e acessível
-2. Configure a URL no `.env`
-3. Teste os endpoints através da interface da aplicação
-
----
-
-## 📄 Licença
 
 Este projeto foi desenvolvido para fins acadêmicos como parte da disciplina **Front-End Design Engineering** da FIAP.
 
