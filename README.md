@@ -206,7 +206,7 @@ O projeto está preparado para integração com API RESTful desenvolvida em Java
 
 1. **Defina a URL da API** no arquivo `.env`:
    ```env
-   VITE_API_BASE_URL=https://sua-api-remota.com/api
+   VITE_API_BASE_URL=https://sprint4java564969.onrender.com
    ```
 
 2. **Use os serviços de API** nos componentes:
@@ -240,13 +240,6 @@ O projeto está preparado para integração com API RESTful desenvolvida em Java
 - `DELETE /teleconsulta/:id` - Desmarca teleconsulta
 
 **URL da API**: [https://sprint4java564969.onrender.com](https://sprint4java564969.onrender.com)
-
-#### Emergências (Exemplo)
-- `GET /api/emergencias` - Lista todas as emergências
-- `GET /api/emergencias/:id` - Busca emergência por ID
-- `POST /api/emergencias` - Cria nova emergência
-- `PUT /api/emergencias/:id` - Atualiza emergência
-- `DELETE /api/emergencias/:id` - Deleta emergência
 
 ### Tratamento de Erros
 
