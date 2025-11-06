@@ -14,7 +14,12 @@ function extractDate(dateTimeString: string): string {
 /**
  * Normaliza o status da API para o formato esperado
  */
-function normalizeStatus(status: string): TeleconsultaStatus {
+function normalizeStatus(status: string | null | undefined): TeleconsultaStatus {
+  // Se status for null ou undefined, retorna o valor padrão
+  if (!status) {
+    return 'agendada'
+  }
+  
   const normalized = status.toLowerCase()
   if (normalized === 'agendada') return 'agendada'
   if (normalized === 'confirmada') return 'confirmada'
@@ -130,6 +135,13 @@ const teleconsultaService = {
       if (!response.data) {
         throw new Error('Resposta da API não contém dados')
       }
+      
+      // Se a resposta não tiver todos os campos, busca novamente para garantir dados completos
+      if (!response.data.codigo || !response.data.nomePaciente) {
+        // Se a resposta estiver incompleta, busca novamente por ID
+        return await this.getById(id)
+      }
+      
       return mapApiResponseToTeleconsulta(response.data)
     } catch (error) {
       console.error(`Erro ao atualizar teleconsulta ${id}:`, error)
