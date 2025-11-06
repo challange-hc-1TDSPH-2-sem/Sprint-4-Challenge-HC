@@ -13,6 +13,7 @@ import FAQ from './pages/FAQ.tsx'
 import Contato from './pages/Contato.tsx'
 import ServicoDetalhe from './pages/ServicoDetalhe.tsx'
 import NotFound from './pages/NotFound.tsx'
+import Teleconsulta from './pages/Teleconsulta.tsx'
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
       { path: 'sobre', element: <Sobre /> },
       { path: 'faq', element: <FAQ /> },
       { path: 'contato', element: <Contato /> },
+      { path: 'teleconsulta', element: <Teleconsulta /> },
       { path: '*', element: <NotFound /> },
     ],
   },
