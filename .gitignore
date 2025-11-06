@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Arquivos de documentação da aula (não necessários no repositório)
+*.pdf
+Front-End_Sprint*.txt
+Front-End_Sprint*.pdf
