@@ -139,7 +139,11 @@ const teleconsultaService = {
       // Se a resposta não tiver todos os campos, busca novamente para garantir dados completos
       if (!response.data.codigo || !response.data.nomePaciente) {
         // Se a resposta estiver incompleta, busca novamente por ID
-        return await this.getById(id)
+        const teleconsulta = await this.getById(id)
+        if (!teleconsulta) {
+          throw new Error('Não foi possível obter a teleconsulta atualizada')
+        }
+        return teleconsulta
       }
       
       return mapApiResponseToTeleconsulta(response.data)
