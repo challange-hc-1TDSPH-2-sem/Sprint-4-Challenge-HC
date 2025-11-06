@@ -19,7 +19,8 @@ import type { ApiResponse, ApiError, RequestConfig } from '../types/api'
  * await api.delete('/emergencias/1')
  */
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api'
+// URL base da API - sem o prefixo /api pois a API Java não usa esse prefixo
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://sprint4java564969.onrender.com'
 const API_TIMEOUT = Number(import.meta.env.VITE_API_TIMEOUT) || 10000
 
 /**
@@ -35,15 +36,6 @@ function buildUrl(endpoint: string, params?: Record<string, string | number | bo
   }
   
   return url.toString()
-}
-
-/**
- * Cria um timeout para a requisição
- */
-function createTimeout(timeout: number): Promise<never> {
-  return new Promise((_, reject) => {
-    setTimeout(() => reject(new Error('Request timeout')), timeout)
-  })
 }
 
 /**
@@ -119,8 +111,12 @@ async function request<T = unknown>(
     // Parse da resposta
     const data = await response.json().catch(() => null)
 
+    // A API pode retornar os dados diretamente ou dentro de um objeto
+    // Se for um array ou objeto simples, retorna diretamente
+    const responseData = data as T
+
     return {
-      data: data as T,
+      data: responseData,
       success: true,
       status: response.status,
     }
