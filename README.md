@@ -1,52 +1,394 @@
-# HC BRIDGE - Sprint 03
+# 🚨 HC BRIDGE - Assistente Virtual para Emergências Médicas
 
-Solução integrada ao Portal do Paciente HC para facilitar o acesso às ferramentas de saúde digital. Aplicação SPA construída com `React + Vite + TypeScript` e estilizada com `TailwindCSS`.
+<div align="center">
 
-## Executar
+![HC BRIDGE](public/favicon.svg)
 
-```bash
-npm install
-npm run dev
+**Sprint 04 - Front-End Design Engineering**
+
+Aplicação SPA (Single Page Application) desenvolvida com React + Vite + TypeScript para facilitar o acesso às ferramentas de saúde digital do Hospital das Clínicas.
+
+[![React](https://img.shields.io/badge/React-19.1.1-61DAFB?logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-3178C6?logo=typescript)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-7.1.2-646CFF?logo=vite)](https://vitejs.dev/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.1.13-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
+
+</div>
+
+---
+
+## 📋 Índice
+
+- [Sobre o Projeto](#-sobre-o-projeto)
+- [Tecnologias](#-tecnologias)
+- [Funcionalidades](#-funcionalidades)
+- [Estrutura do Projeto](#-estrutura-do-projeto)
+- [Instalação e Execução](#-instalação-e-execução)
+- [Integração com API](#-integração-com-api)
+- [Deploy](#-deploy)
+- [Integrantes](#-integrantes)
+- [Links Importantes](#-links-importantes)
+- [Imagens do Projeto](#-imagens-do-projeto)
+
+---
+
+## 🎯 Sobre o Projeto
+
+O **HC BRIDGE** é uma solução integrada ao Portal do Paciente HC que facilita o acesso às ferramentas de saúde digital. A aplicação oferece:
+
+- 🚨 **Sistema de Emergências 24/7**: Assistência imediata para situações críticas
+- 🤖 **Chatbot Inteligente**: Assistente virtual para orientações de saúde
+- 🏥 **Gestão de Serviços**: Visualização e solicitação de serviços médicos
+- 📋 **FAQ Interativo**: Respostas para perguntas frequentes
+- 📞 **Canais de Contato**: Múltiplos canais para comunicação
+
+---
+
+## 🛠 Tecnologias
+
+### Core
+- **React 19.1.1** - Biblioteca JavaScript para construção de interfaces
+- **TypeScript 5.8.3** - Superset JavaScript com tipagem estática
+- **Vite 7.1.2** - Build tool e dev server de alta performance
+
+### Roteamento
+- **React Router DOM 7.9.1** - Roteamento para aplicações React SPA
+
+### Estilização
+- **TailwindCSS 4.1.13** - Framework CSS utility-first
+- **PostCSS** - Processador CSS
+
+### Formulários
+- **React Hook Form 7.62.0** - Biblioteca para gerenciamento de formulários
+
+### Ferramentas de Desenvolvimento
+- **ESLint** - Linter para JavaScript/TypeScript
+- **TypeScript ESLint** - Linter específico para TypeScript
+
+---
+
+## ✨ Funcionalidades
+
+### Páginas Obrigatórias
+
+✅ **Home** (`/`) - Página inicial com visão geral dos serviços  
+✅ **Emergências** (`/emergencias`) - Sistema de emergências médicas  
+✅ **Chatbot** (`/chatbot`) - Assistente virtual interativo  
+✅ **Serviços** (`/servicos`) - Listagem e detalhes de serviços médicos  
+✅ **Sobre** (`/sobre`) - Informações sobre o projeto  
+✅ **FAQ** (`/faq`) - Perguntas frequentes  
+✅ **Contato** (`/contato`) - Formulário de contato  
+✅ **Integrantes** (`/integrantes`) - Informações da equipe  
+
+### Rotas Dinâmicas
+
+- **Serviço Detalhe** (`/servicos/:id`) - Página dinâmica com parâmetros de rota
+
+### Recursos Técnicos
+
+- ✅ Rotas estáticas e dinâmicas com React Router
+- ✅ Tipagem completa com TypeScript (Union Types, Intersection Types, Interfaces)
+- ✅ Responsividade completa (XS, SM, MD, LG, XL)
+- ✅ Integração com API RESTful (GET, POST, PUT, DELETE)
+- ✅ Tratamento de erros e feedback ao usuário
+- ✅ Acessibilidade (ARIA labels, navegação por teclado)
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+challenge-hc-front-end/
+├── public/
+│   ├── favicon.svg          # Favicon do projeto
+│   └── membros/             # Fotos dos integrantes
+│       ├── membro1.png
+│       ├── membro2.png
+│       └── membro3.png
+├── src/
+│   ├── assets/              # Assets estáticos
+│   ├── components/          # Componentes reutilizáveis
+│   │   ├── FaqItem.tsx
+│   │   └── ServiceCard.tsx
+│   ├── data/                # Dados mockados
+│   │   ├── emergency.ts
+│   │   └── services.ts
+│   ├── pages/               # Páginas da aplicação
+│   │   ├── Home.tsx
+│   │   ├── Emergencias.tsx
+│   │   ├── Chatbot.tsx
+│   │   ├── Servicos.tsx
+│   │   ├── ServicoDetalhe.tsx
+│   │   ├── Sobre.tsx
+│   │   ├── FAQ.tsx
+│   │   ├── Contato.tsx
+│   │   ├── Integrantes.tsx
+│   │   └── NotFound.tsx
+│   ├── services/            # Serviços de API
+│   │   ├── api.ts           # Cliente HTTP base
+│   │   ├── emergencyService.ts
+│   │   └── README.md
+│   ├── types/               # Tipos TypeScript
+│   │   └── api.ts           # Tipos, Union Types, Intersection Types
+│   ├── App.tsx              # Componente principal (Layout)
+│   ├── App.css              # Estilos globais (TailwindCSS)
+│   ├── main.tsx             # Entry point
+│   └── vite-env.d.ts        # Tipos do Vite
+├── .env                     # Variáveis de ambiente (não commitado)
+├── .gitignore
+├── eslint.config.js
+├── package.json
+├── postcss.config.cjs       # Configuração PostCSS/Tailwind
+├── tailwind.config.js       # Configuração TailwindCSS
+├── tsconfig.json            # Configuração TypeScript
+├── vite.config.ts           # Configuração Vite
+└── README.md                # Este arquivo
 ```
 
-## Páginas obrigatórias
-- Home (`/`)
-- Integrantes (`/integrantes`)
-- Sobre (`/sobre`)
-- FAQ (`/faq`)
-- Contato (`/contato`)
+---
 
-## Tecnologias
-- React, React Router, React Hook Form
-- TypeScript, Vite
-- TailwindCSS
+## 🚀 Instalação e Execução
 
-## Estrutura
-- `src/pages/*` páginas da SPA
-- `src/App.tsx` layout com navegação
+### Pré-requisitos
 
-## Integrantes
-- Pedro De Matos - RM: 564184 - 1TDSPH
-- João Vitor Lacerda - RM: 565565 - 1TDSPH  
-- Murilo Fernandes Carapia - RM: 564969 - 1TDSPH
+- Node.js 18+ (recomendado: Node.js 22.14.0)
+- npm ou yarn
 
-## Links
-- Repositório: https://github.com/challange-hc-1TDSPH-2-sem/challenge-hc-front-end.git
-- Vídeo no YouTube: https://www.youtube.com/watch?v=W6WYKu_Qmog
+### Passos
 
-## Imagens
+1. **Clone o repositório**
+   ```bash
+   git clone https://github.com/challange-hc-1TDSPH-2-sem/challenge-hc-front-end.git
+   cd challenge-hc-front-end
+   ```
 
-![Home](public/favicon.svg)
+2. **Instale as dependências**
+   ```bash
+   npm install
+   ```
 
-Integrantes (fotos usadas na página):
+3. **Configure as variáveis de ambiente**
+   
+   Crie um arquivo `.env` na raiz do projeto:
+   ```env
+   VITE_API_BASE_URL=http://localhost:8080/api
+   VITE_API_TIMEOUT=10000
+   ```
+
+4. **Execute o projeto em desenvolvimento**
+   ```bash
+   npm run dev
+   ```
+
+5. **Acesse no navegador**
+   ```
+   http://localhost:5173
+   ```
+
+### Scripts Disponíveis
+
+```bash
+npm run dev      # Inicia servidor de desenvolvimento
+npm run build    # Gera build de produção
+npm run preview  # Preview do build de produção
+npm run lint     # Executa o linter
+```
+
+---
+
+## 🔌 Integração com API
+
+O projeto está preparado para integração com API RESTful desenvolvida em Java (Domain Driven Design).
+
+### Configuração
+
+1. **Defina a URL da API** no arquivo `.env`:
+   ```env
+   VITE_API_BASE_URL=https://sua-api-remota.com/api
+   ```
+
+2. **Use os serviços de API** nos componentes:
+   ```typescript
+   import emergencyService from './services/emergencyService'
+   
+   // GET - Listar emergências
+   const emergencies = await emergencyService.getAll()
+   
+   // POST - Criar emergência
+   const newEmergency = await emergencyService.create({
+     tipo: 'cardiaco',
+     descricao: 'Dor no peito',
+     contato: '11999999999'
+   })
+   
+   // PUT - Atualizar emergência
+   await emergencyService.update(1, { status: 'atendido' })
+   
+   // DELETE - Deletar emergência
+   await emergencyService.delete(1)
+   ```
+
+### Endpoints Implementados
+
+- `GET /api/emergencias` - Lista todas as emergências
+- `GET /api/emergencias/:id` - Busca emergência por ID
+- `POST /api/emergencias` - Cria nova emergência
+- `PUT /api/emergencias/:id` - Atualiza emergência
+- `DELETE /api/emergencias/:id` - Deleta emergência
+
+### Tratamento de Erros
+
+O cliente API trata automaticamente:
+- ✅ Timeouts de requisição
+- ✅ Erros HTTP (400, 401, 404, 500, etc.)
+- ✅ Erros de rede
+- ✅ Erros de parsing JSON
+
+---
+
+## 🌐 Deploy
+
+### Deploy na Vercel
+
+1. **Conecte seu repositório GitHub à Vercel**
+
+2. **Configure as variáveis de ambiente** na Vercel:
+   - `VITE_API_BASE_URL` - URL da sua API remota
+   - `VITE_API_TIMEOUT` - Timeout (opcional)
+
+3. **Deploy automático**
+   - A Vercel fará deploy automaticamente a cada push na branch `main`
+
+### URL de Produção
+
+🔗 **URL do Projeto**: [Adicione aqui a URL após o deploy na Vercel]
+
+---
+
+## 👥 Integrantes
+
+| Nome | RM | Turma | GitHub |
+|------|----|----|--------|
+| **Pedro De Matos** | 564184 | 1TDSPH | [@PedroPrevitali](https://github.com/PedroPrevitali) |
+| **João Vitor Lacerda** | 565565 | 1TDSPH | [@joaolacerdaconsorte](https://github.com/joaolacerdaconsorte) |
+| **Murilo Fernandes Carapia** | 564969 | 1TDSPH | [@MurilloFernandesCarapia](https://github.com/MurilloFernandesCarapia) |
+
+### Fotos dos Integrantes
+
+<div align="center">
 
 ![João Vitor Lacerda](public/membros/membro1.png)
+*João Vitor Lacerda - RM: 565565*
 
 ![Murilo Fernandes Carapia](public/membros/membro2.png)
+*Murilo Fernandes Carapia - RM: 564969*
 
 ![Pedro De Matos](public/membros/membro3.png)
+*Pedro De Matos - RM: 564184*
 
-## Assets
+</div>
 
-- Utilizamos como favicon um arquivo em formato **SVG** (`public/favicon.svg`).
-- Para ilustrações e ícones dentro das páginas, optamos por utilizar **emojis** (ex.: 🚨, 🤖, 📅, etc.), garantindo leveza e evitando dependência de bibliotecas externas de ícones.
+---
+
+## 🔗 Links Importantes
+
+### Repositório
+🔗 **GitHub**: [https://github.com/challange-hc-1TDSPH-2-sem/challenge-hc-front-end.git](https://github.com/challange-hc-1TDSPH-2-sem/challenge-hc-front-end.git)
+
+### Vídeo de Apresentação
+🎥 **YouTube**: [https://www.youtube.com/watch?v=W6WYKu_Qmog](https://www.youtube.com/watch?v=W6WYKu_Qmog)
+
+### Deploy
+🌐 **Vercel**: [Adicione aqui a URL após o deploy]
+
+---
+
+## 📸 Imagens do Projeto
+
+### Favicon
+![Favicon](public/favicon.svg)
+
+### Screenshots
+
+*Adicione aqui screenshots das principais páginas do projeto*
+
+---
+
+## 🎨 Design System
+
+### Cores Principais
+
+- **Brand (Vermelho)**: `#dc2626` - Emergências e ações críticas
+- **Secondary (Azul)**: `#2563eb` - Ações secundárias
+- **Accent (Verde)**: `#059669` - Sucesso e confirmações
+
+### Breakpoints (TailwindCSS)
+
+- **XS**: `< 640px` - Mobile pequeno
+- **SM**: `≥ 640px` - Mobile grande
+- **MD**: `≥ 768px` - Tablet
+- **LG**: `≥ 1024px` - Desktop
+- **XL**: `≥ 1280px` - Desktop grande
+
+---
+
+## 📝 TypeScript - Tipos Avançados
+
+O projeto demonstra o uso de:
+
+### Tipos Básicos
+- `number`, `string`, `boolean`, `object`
+
+### Union Types
+```typescript
+type EmergencyStatus = 'pendente' | 'em_atendimento' | 'resolvida' | 'cancelada'
+type Priority = 'baixa' | 'media' | 'alta' | 'critica'
+```
+
+### Intersection Types
+```typescript
+type Emergency = EmergencyBase & EmergencyMetadata
+type UserWithPermissions = UserBase & UserPermissions
+```
+
+### Interfaces
+```typescript
+interface ApiResponse<T> {
+  data?: T
+  success?: boolean
+  status?: number
+}
+```
+
+---
+
+## 🧪 Testes
+
+Para testar a integração com a API:
+
+1. Certifique-se de que sua API Java está rodando e acessível
+2. Configure a URL no `.env`
+3. Teste os endpoints através da interface da aplicação
+
+---
+
+## 📄 Licença
+
+Este projeto foi desenvolvido para fins acadêmicos como parte da disciplina **Front-End Design Engineering** da FIAP.
+
+---
+
+## 🙏 Agradecimentos
+
+- FIAP - Faculdade de Informática e Administração Paulista
+- Hospital das Clínicas (HC) - Referência para o projeto
+
+---
+
+<div align="center">
+
+**Desenvolvido com ❤️ pela equipe HC BRIDGE**
+
+🚨 **HC BRIDGE** - Assistente Virtual para Emergências Médicas 24/7
+
+</div>
