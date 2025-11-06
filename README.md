@@ -158,7 +158,7 @@ challenge-hc-front-end/
 
 1. **Clone o repositório**
    ```bash
-   git clone https://github.com/challange-hc-1TDSPH-2-sem/challenge-hc-front-end.git
+   git clone https://github.com/challange-hc-1TDSPH-2-sem/Sprint-4-Challenge-HC.git
    cd challenge-hc-front-end
    ```
 
@@ -293,7 +293,7 @@ O cliente API trata automaticamente:
 ## 🔗 Links Importantes
 
 ### Repositório
-🔗 **GitHub**: [https://github.com/challange-hc-1TDSPH-2-sem/challenge-hc-front-end.git](https://github.com/challange-hc-1TDSPH-2-sem/challenge-hc-front-end.git)
+🔗 **GitHub**: [https://github.com/challange-hc-1TDSPH-2-sem/Sprint-4-Challenge-HC.git](https://github.com/challange-hc-1TDSPH-2-sem/Sprint-4-Challenge-HC.git)
 
 ### Vídeo de Apresentação
 🎥 **YouTube**: [https://www.youtube.com/watch?v=W6WYKu_Qmog](https://www.youtube.com/watch?v=W6WYKu_Qmog)

@@ -15,7 +15,7 @@
 
 1. Acesse [vercel.com](https://vercel.com) e faça login com sua conta GitHub
 2. Clique em **"Add New Project"**
-3. Selecione o repositório `challenge-hc-front-end`
+3. Selecione o repositório `Sprint-4-Challenge-HC`
 4. A Vercel detectará automaticamente que é um projeto Vite
 
 ### Passo 3: Configurar Variáveis de Ambiente
