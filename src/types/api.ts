@@ -270,7 +270,7 @@ export interface TeleconsultaApiResponse {
   dataConsulta: string
   horaConsulta: string
   cep: string
-  status: string // API retorna "Agendada" com A maiúscula
+  status?: string | null // API pode retornar "Agendada" com A maiúscula ou null
 }
 
 
