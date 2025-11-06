@@ -258,4 +258,19 @@ export interface TeleconsultaMetadata {
 
 export type TeleconsultaResponse = TeleconsultaBase & TeleconsultaMetadata
 
+// Interface para resposta bruta da API (com codigo em vez de id)
+export interface TeleconsultaApiResponse {
+  codigo: number
+  nomePaciente: string
+  sobrenomePaciente: string
+  emailPaciente: string
+  idade: number
+  whatsapp: number
+  especialidade: string
+  dataConsulta: string
+  horaConsulta: string
+  cep: string
+  status: string // API retorna "Agendada" com A maiúscula
+}
+
 
