@@ -203,4 +203,59 @@ export interface ServiceDetails {
 
 export type Service = ServiceBase & ServiceDetails & Metadata
 
+// ============================================
+// TIPOS PARA TELECONSULTA
+// ============================================
+
+// Union Type: Status de teleconsulta
+export type TeleconsultaStatus = 'agendada' | 'confirmada' | 'realizada' | 'cancelada'
+
+// Union Type: Especialidade médica
+export type Especialidade = 
+  | 'clinica_geral' 
+  | 'cardiologia' 
+  | 'dermatologia' 
+  | 'endocrinologia' 
+  | 'ginecologia' 
+  | 'neurologia' 
+  | 'ortopedia' 
+  | 'pediatria' 
+  | 'psiquiatria' 
+  | 'outro'
+
+// Interface: Requisição de teleconsulta (conforme API Java)
+export interface TeleconsultaRequest {
+  nomePaciente: string
+  sobrenomePaciente: string
+  emailPaciente: string
+  idade: number
+  whatsapp: number
+  especialidade: string
+  dataConsulta: string
+  horaConsulta: string
+  cep: string
+}
+
+// Interface: Resposta de teleconsulta (usando Intersection)
+export interface TeleconsultaBase {
+  nomePaciente: string
+  sobrenomePaciente: string
+  emailPaciente: string
+  idade: number
+  whatsapp: number
+  especialidade: string
+  dataConsulta: string
+  horaConsulta: string
+  cep: string
+}
+
+export interface TeleconsultaMetadata {
+  id: ID
+  status: TeleconsultaStatus
+  createdAt: Timestamp
+  updatedAt: Timestamp
+}
+
+export type TeleconsultaResponse = TeleconsultaBase & TeleconsultaMetadata
+
 
