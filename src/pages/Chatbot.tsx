@@ -24,6 +24,8 @@ interface Message {
   timestamp: Date
 }
 
+type StoredMessage = Omit<Message, 'timestamp'> & { timestamp: string }
+
 export default function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -41,11 +43,17 @@ export default function Chatbot() {
     const saved = sessionStorage.getItem('hc_chat_msgs')
     if (saved) {
       try {
-        const parsed = JSON.parse(saved)
+        const parsed = JSON.parse(saved) as unknown
         if (Array.isArray(parsed) && parsed.length) {
-          setMessages(parsed.map((m: any) => ({...m, timestamp: new Date(m.timestamp)})))
+          const parsedMessages = (parsed as StoredMessage[])
+            .filter((m) => typeof m === 'object' && m !== null && 'timestamp' in m)
+            .map((m) => ({ ...m, timestamp: new Date(m.timestamp) }))
+          setMessages(parsedMessages)
         }
-      } catch {}
+      } catch (error) {
+        // Falha ao restaurar mensagens; ignora armazenamento corrompido
+        console.error('Erro ao carregar mensagens do chat:', error)
+      }
     }
   }, [])
 
