@@ -287,7 +287,7 @@ O cliente API trata automaticamente:
 🔗 **GitHub**: [https://github.com/challange-hc-1TDSPH-2-sem/Sprint-4-Challenge-HC.git](https://github.com/challange-hc-1TDSPH-2-sem/Sprint-4-Challenge-HC.git)
 
 ### Vídeo de Apresentação
-🎥 **YouTube**: [https://www.youtube.com/watch?v=W6WYKu_Qmog](https://www.youtube.com/watch?v=W6WYKu_Qmog)
+🎥 **YouTube**: [https://www.youtube.com/watch?v=jY1xezYTyGA](https://www.youtube.com/watch?v=jY1xezYTyGA)
 
 ### Deploy
 🌐 **Vercel**: [https://sprint-4-challenge-hc.vercel.app]
